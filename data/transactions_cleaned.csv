@@ -1,0 +1,101 @@
+transaction_id,customer_id,product_name,category,quantity,unit_price,order_date,country,total_amount,year,month,month_name,quarter,day_of_week,customer_segment
+TXN01502,CUST0264,Écran 27 pouces,Moniteurs,2,388.2,2025-08-23,Canada,776.4,2025,8,August,3,Saturday,VIP
+TXN02587,CUST0293,Clavier Mécanique,Accessoires,3,86.87,2025-09-27,France,260.61,2025,9,September,3,Saturday,VIP
+TXN02654,CUST0373,AirPods Pro,Audio,3,281.28,2025-09-25,Canada,843.8399999999999,2025,9,September,3,Thursday,VIP
+TXN01056,CUST0058,Laptop Dell XPS,Ordinateurs,3,952.45,2025-06-21,Belgique,2857.3500000000004,2025,6,June,2,Saturday,VIP
+TXN00706,CUST0090,AirPods Pro,Audio,3,258.9,2025-06-18,Canada,776.6999999999999,2025,6,June,2,Wednesday,Premium
+TXN00107,CUST0457,Casque Sony WH-1000XM5,Audio,3,381.5,2025-09-25,Canada,1144.5,2025,9,September,3,Thursday,VIP
+TXN00590,CUST0122,Casque Sony WH-1000XM5,Audio,1,377.56,2025-11-26,Belgique,377.56,2025,11,November,4,Wednesday,VIP
+TXN02469,CUST0076,Écran 27 pouces,Moniteurs,2,527.76,2025-09-11,Canada,1055.52,2025,9,September,3,Thursday,VIP
+TXN02414,CUST0279,iPhone 15,Smartphones,1,825.1,2025-11-18,Belgique,825.1,2025,11,November,4,Tuesday,VIP
+TXN01601,CUST0394,Souris Gaming,Accessoires,2,104.41,2025-10-24,France,208.82,2025,10,October,4,Friday,VIP
+TXN02465,CUST0118,Souris Gaming,Accessoires,3,93.26,2025-09-16,Canada,279.78000000000003,2025,9,September,3,Tuesday,VIP
+TXN00229,CUST0327,Clavier Mécanique,Accessoires,3,125.72,2025-11-22,Suisse,377.16,2025,11,November,4,Saturday,VIP
+TXN00916,CUST0069,Écran 27 pouces,Moniteurs,2,712.06,2025-08-13,Suisse,1424.12,2025,8,August,3,Wednesday,Premium
+TXN00795,CUST0376,Laptop Dell XPS,Ordinateurs,3,802.89,2025-06-19,Belgique,2408.67,2025,6,June,2,Thursday,VIP
+TXN03022,CUST0196,iPhone 15,Smartphones,1,767.8,2025-08-15,Canada,767.8,2025,8,August,3,Friday,VIP
+TXN03544,CUST0500,iPhone 15,Smartphones,3,724.17,2025-11-12,Belgique,2172.51,2025,11,November,4,Wednesday,Premium
+TXN01074,CUST0023,iPhone 15,Smartphones,3,1029.45,2025-08-03,Belgique,3088.3500000000004,2025,8,August,3,Sunday,VIP
+TXN03352,CUST0353,iPhone 15,Smartphones,2,1085.18,2025-08-06,Suisse,2170.36,2025,8,August,3,Wednesday,VIP
+TXN01745,CUST0123,Clavier Mécanique,Accessoires,1,92.94,2025-09-12,Suisse,92.94,2025,9,September,3,Friday,VIP
+TXN01085,CUST0213,Samsung Galaxy Tab,Tablettes,3,524.76,2025-11-30,France,1574.28,2025,11,November,4,Sunday,VIP
+TXN00927,CUST0390,Casque Sony WH-1000XM5,Audio,2,304.04,2025-06-23,Canada,608.08,2025,6,June,2,Monday,VIP
+TXN03050,CUST0099,Écran 27 pouces,Moniteurs,2,594.0,2025-09-25,Canada,1188.0,2025,9,September,3,Thursday,VIP
+TXN01118,CUST0388,AirPods Pro,Audio,3,237.38,2025-10-29,France,712.14,2025,10,October,4,Wednesday,Premium
+TXN00643,CUST0296,iPhone 15,Smartphones,2,1056.16,2025-07-12,France,2112.32,2025,7,July,3,Saturday,VIP
+TXN04768,CUST0259,AirPods Pro,Audio,3,243.12,2025-10-16,Canada,729.36,2025,10,October,4,Thursday,VIP
+TXN00502,CUST0095,Samsung Galaxy Tab,Tablettes,3,463.96,2025-06-30,France,1391.88,2025,6,June,2,Monday,VIP
+TXN04067,CUST0477,Casque Sony WH-1000XM5,Audio,3,355.07,2025-07-22,Suisse,1065.21,2025,7,July,3,Tuesday,VIP
+TXN00334,CUST0256,iPhone 15,Smartphones,1,1118.34,2025-07-11,France,1118.34,2025,7,July,3,Friday,VIP
+TXN04685,CUST0372,AirPods Pro,Audio,2,205.36,2025-10-14,Canada,410.72,2025,10,October,4,Tuesday,VIP
+TXN00487,CUST0310,Laptop Dell XPS,Ordinateurs,2,1064.02,2025-08-13,France,2128.04,2025,8,August,3,Wednesday,VIP
+TXN01963,CUST0053,Souris Gaming,Accessoires,3,134.18,2025-07-12,Belgique,402.54,2025,7,July,3,Saturday,VIP
+TXN00394,CUST0098,Souris Gaming,Accessoires,3,119.32,2025-11-01,Belgique,357.96,2025,11,November,4,Saturday,Standard
+TXN04843,CUST0118,iPhone 15,Smartphones,1,876.92,2025-09-29,Suisse,876.92,2025,9,September,3,Monday,VIP
+TXN04867,CUST0087,Laptop Dell XPS,Ordinateurs,1,1395.76,2025-10-07,Belgique,1395.76,2025,10,October,4,Tuesday,VIP
+TXN01756,CUST0099,Casque Sony WH-1000XM5,Audio,3,332.82,2025-06-28,France,998.46,2025,6,June,2,Saturday,VIP
+TXN02516,CUST0218,Écran 27 pouces,Moniteurs,2,694.97,2025-10-15,Canada,1389.94,2025,10,October,4,Wednesday,VIP
+TXN03586,CUST0488,Souris Gaming,Accessoires,3,82.25,2025-07-10,Belgique,246.75,2025,7,July,3,Thursday,VIP
+TXN04316,CUST0030,Souris Gaming,Accessoires,1,138.85,2025-07-27,Belgique,138.85,2025,7,July,3,Sunday,VIP
+TXN04967,CUST0324,Samsung Galaxy Tab,Tablettes,3,494.05,2025-11-28,Suisse,1482.15,2025,11,November,4,Friday,VIP
+TXN02100,CUST0289,AirPods Pro,Audio,1,248.04,2025-12-01,Canada,248.04,2025,12,December,4,Monday,VIP
+TXN03600,CUST0279,Écran 27 pouces,Moniteurs,3,669.71,2025-07-25,Belgique,2009.13,2025,7,July,3,Friday,VIP
+TXN04122,CUST0065,AirPods Pro,Audio,3,201.02,2025-11-26,France,603.0600000000001,2025,11,November,4,Wednesday,VIP
+TXN00030,CUST0476,Souris Gaming,Accessoires,2,42.14,2025-08-26,Suisse,84.28,2025,8,August,3,Tuesday,VIP
+TXN00066,CUST0154,Laptop Dell XPS,Ordinateurs,3,1371.97,2025-08-20,France,4115.91,2025,8,August,3,Wednesday,VIP
+TXN00839,CUST0255,Casque Sony WH-1000XM5,Audio,2,311.87,2025-11-19,France,623.74,2025,11,November,4,Wednesday,Premium
+TXN03907,CUST0315,Clavier Mécanique,Accessoires,3,183.39,2025-08-30,Canada,550.17,2025,8,August,3,Saturday,Premium
+TXN03774,CUST0054,iPhone 15,Smartphones,1,891.29,2025-10-17,Belgique,891.29,2025,10,October,4,Friday,VIP
+TXN04636,CUST0133,iPhone 15,Smartphones,3,912.63,2025-08-23,Canada,2737.89,2025,8,August,3,Saturday,VIP
+TXN03162,CUST0085,Casque Sony WH-1000XM5,Audio,3,386.18,2025-07-22,France,1158.54,2025,7,July,3,Tuesday,VIP
+TXN02660,CUST0379,Souris Gaming,Accessoires,3,44.03,2025-10-21,Canada,132.09,2025,10,October,4,Tuesday,VIP
+TXN04616,CUST0046,Casque Sony WH-1000XM5,Audio,3,355.75,2025-07-26,France,1067.25,2025,7,July,3,Saturday,VIP
+TXN04629,CUST0394,Laptop Dell XPS,Ordinateurs,3,1164.76,2025-07-01,France,3494.28,2025,7,July,3,Tuesday,VIP
+TXN02452,CUST0185,Laptop Dell XPS,Ordinateurs,2,1224.88,2025-06-17,Suisse,2449.76,2025,6,June,2,Tuesday,VIP
+TXN02847,CUST0482,Clavier Mécanique,Accessoires,2,132.34,2025-06-27,France,264.68,2025,6,June,2,Friday,VIP
+TXN01145,CUST0055,Clavier Mécanique,Accessoires,1,173.49,2025-07-29,Belgique,173.49,2025,7,July,3,Tuesday,VIP
+TXN03079,CUST0490,AirPods Pro,Audio,2,249.05,2025-06-15,Suisse,498.1,2025,6,June,2,Sunday,VIP
+TXN01104,CUST0196,Laptop Dell XPS,Ordinateurs,3,1344.19,2025-07-19,France,4032.57,2025,7,July,3,Saturday,VIP
+TXN00169,CUST0353,Clavier Mécanique,Accessoires,2,94.92,2025-07-23,Suisse,189.84,2025,7,July,3,Wednesday,VIP
+TXN01671,CUST0326,Écran 27 pouces,Moniteurs,2,571.37,2025-10-02,Canada,1142.74,2025,10,October,4,Thursday,VIP
+TXN02571,CUST0315,AirPods Pro,Audio,1,292.95,2025-06-12,Belgique,292.95,2025,6,June,2,Thursday,Premium
+TXN02378,CUST0103,Samsung Galaxy Tab,Tablettes,3,472.13,2025-10-10,Belgique,1416.39,2025,10,October,4,Friday,VIP
+TXN04396,CUST0358,Laptop Dell XPS,Ordinateurs,2,1078.68,2025-07-30,Canada,2157.36,2025,7,July,3,Wednesday,VIP
+TXN04258,CUST0230,Casque Sony WH-1000XM5,Audio,2,329.77,2025-11-01,Canada,659.54,2025,11,November,4,Saturday,VIP
+TXN03863,CUST0046,iPhone 15,Smartphones,2,1152.36,2025-07-31,Canada,2304.72,2025,7,July,3,Thursday,VIP
+TXN00024,CUST0240,iPhone 15,Smartphones,2,890.81,2025-10-16,Suisse,1781.62,2025,10,October,4,Thursday,VIP
+TXN02634,CUST0052,Laptop Dell XPS,Ordinateurs,2,911.53,2025-09-08,Canada,1823.06,2025,9,September,3,Monday,VIP
+TXN03341,CUST0460,Laptop Dell XPS,Ordinateurs,1,1352.68,2025-09-28,Canada,1352.68,2025,9,September,3,Sunday,VIP
+TXN02216,CUST0259,iPhone 15,Smartphones,3,1100.59,2025-10-05,France,3301.7699999999995,2025,10,October,4,Sunday,VIP
+TXN03683,CUST0173,Souris Gaming,Accessoires,1,98.63,2025-06-09,Canada,98.63,2025,6,June,2,Monday,VIP
+TXN04725,CUST0020,Samsung Galaxy Tab,Tablettes,1,417.21,2025-08-26,Canada,417.21,2025,8,August,3,Tuesday,Premium
+TXN01908,CUST0221,Écran 27 pouces,Moniteurs,3,408.59,2025-08-16,Belgique,1225.77,2025,8,August,3,Saturday,VIP
+TXN00085,CUST0143,Clavier Mécanique,Accessoires,1,196.03,2025-06-13,Suisse,196.03,2025,6,June,2,Friday,VIP
+TXN00228,CUST0233,Laptop Dell XPS,Ordinateurs,2,1175.6,2025-08-28,Suisse,2351.2,2025,8,August,3,Thursday,VIP
+TXN00297,CUST0489,Écran 27 pouces,Moniteurs,2,569.18,2025-10-03,France,1138.36,2025,10,October,4,Friday,VIP
+TXN01002,CUST0218,Souris Gaming,Accessoires,2,60.23,2025-07-18,Belgique,120.46,2025,7,July,3,Friday,VIP
+TXN02139,CUST0329,Casque Sony WH-1000XM5,Audio,2,331.32,2025-09-12,Canada,662.64,2025,9,September,3,Friday,VIP
+TXN00712,CUST0108,Souris Gaming,Accessoires,2,41.25,2025-07-06,Belgique,82.5,2025,7,July,3,Sunday,VIP
+TXN02802,CUST0461,Souris Gaming,Accessoires,1,55.1,2025-10-30,Canada,55.1,2025,10,October,4,Thursday,VIP
+TXN02528,CUST0353,Laptop Dell XPS,Ordinateurs,1,1242.09,2025-08-05,Belgique,1242.09,2025,8,August,3,Tuesday,VIP
+TXN03753,CUST0252,Casque Sony WH-1000XM5,Audio,3,311.25,2025-07-12,Suisse,933.75,2025,7,July,3,Saturday,VIP
+TXN03322,CUST0223,AirPods Pro,Audio,1,281.49,2025-07-08,Canada,281.49,2025,7,July,3,Tuesday,Premium
+TXN03182,CUST0359,Souris Gaming,Accessoires,2,43.41,2025-11-28,Canada,86.82,2025,11,November,4,Friday,VIP
+TXN04184,CUST0133,Écran 27 pouces,Moniteurs,3,688.63,2025-09-06,Suisse,2065.89,2025,9,September,3,Saturday,VIP
+TXN01616,CUST0463,Écran 27 pouces,Moniteurs,1,314.05,2025-09-16,Belgique,314.05,2025,9,September,3,Tuesday,Premium
+TXN03025,CUST0454,Casque Sony WH-1000XM5,Audio,3,356.68,2025-11-06,Suisse,1070.04,2025,11,November,4,Thursday,VIP
+TXN01414,CUST0307,Écran 27 pouces,Moniteurs,1,709.53,2025-09-22,France,709.53,2025,9,September,3,Monday,VIP
+TXN00764,CUST0106,AirPods Pro,Audio,3,222.51,2025-07-09,Suisse,667.53,2025,7,July,3,Wednesday,VIP
+TXN00656,CUST0210,AirPods Pro,Audio,1,200.64,2025-07-23,France,200.64,2025,7,July,3,Wednesday,VIP
+TXN04798,CUST0226,AirPods Pro,Audio,1,286.3,2025-08-01,Belgique,286.3,2025,8,August,3,Friday,VIP
+TXN03850,CUST0418,Clavier Mécanique,Accessoires,3,140.99,2025-10-22,France,422.97,2025,10,October,4,Wednesday,VIP
+TXN04154,CUST0174,Clavier Mécanique,Accessoires,1,104.12,2025-09-29,Belgique,104.12,2025,9,September,3,Monday,VIP
+TXN00469,CUST0369,Laptop Dell XPS,Ordinateurs,2,1124.1,2025-11-12,Canada,2248.2,2025,11,November,4,Wednesday,VIP
+TXN00158,CUST0486,Samsung Galaxy Tab,Tablettes,1,543.34,2025-08-12,Suisse,543.34,2025,8,August,3,Tuesday,VIP
+TXN01296,CUST0045,iPhone 15,Smartphones,3,1178.9,2025-09-17,Belgique,3536.7000000000003,2025,9,September,3,Wednesday,VIP
+TXN00498,CUST0118,Clavier Mécanique,Accessoires,1,103.54,2025-06-15,Canada,103.54,2025,6,June,2,Sunday,VIP
+TXN04741,CUST0047,Souris Gaming,Accessoires,1,74.08,2025-09-18,France,74.08,2025,9,September,3,Thursday,Premium
+TXN02941,CUST0350,Clavier Mécanique,Accessoires,2,92.93,2025-11-11,Belgique,185.86,2025,11,November,4,Tuesday,VIP
+TXN03457,CUST0140,Écran 27 pouces,Moniteurs,2,632.81,2025-06-19,Belgique,1265.62,2025,6,June,2,Thursday,VIP
+TXN00374,CUST0239,Souris Gaming,Accessoires,3,48.16,2025-08-21,Suisse,144.48,2025,8,August,3,Thursday,Premium
+TXN00080,CUST0416,Écran 27 pouces,Moniteurs,3,725.24,2025-07-17,Belgique,2175.7200000000003,2025,7,July,3,Thursday,VIP
