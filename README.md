@@ -12,6 +12,14 @@ Dashboard interactif de visualisation et analyse de données e-commerce construi
 
 Application web interactive permettant d'analyser les performances d'une plateforme e-commerce en temps réel. Le dashboard offre des visualisations dynamiques et des filtres pour explorer les données sous différents angles.
 
+⚠️ Note sur les données
+
+Ce repository contient un **échantillon de 100 transactions** pour permettre le déploiement sur Streamlit Cloud. 
+
+Pour utiliser le dataset complet (5000 transactions) :
+1. Clonez le [projet ETL](https://github.com/MarzoukOsama/etl-ecommerce-pipeline)
+2. Exécutez le pipeline pour générer les données complètes
+3. Copiez les fichiers vers le dossier `data/`
 
 
 &nbsp;✨ Fonctionnalités
