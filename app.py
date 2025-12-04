@@ -127,13 +127,14 @@ if transactions is not None:
             delta="Par commande"
         )
     
-    with col4:
-    avg_orders_per_customer = (total_orders / unique_customers) if unique_customers > 0 else 0
-    st.metric(
-        label="👥 Clients Uniques",
-        value=f"{unique_customers}",
-        delta=f"{avg_orders_per_customer:.1f} cmd/client" if unique_customers > 0 else "Aucune donnée"
-    	)
+     with col4:
+        avg_orders_per_customer = (total_orders / unique_customers) if unique_customers > 0 else 0
+        st.metric(
+            label="👥 Clients Uniques",
+            value=f"{unique_customers}",
+            delta=f"{avg_orders_per_customer:.1f} cmd/client" if unique_customers > 0 else "Aucune donnée"
+        )
+
 
     
     st.markdown("---")
