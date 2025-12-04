@@ -133,7 +133,7 @@ if transactions is not None:
         label="👥 Clients Uniques",
         value=f"{unique_customers}",
         delta=f"{avg_orders_per_customer:.1f} cmd/client" if unique_customers > 0 else "Aucune donnée"
-    )
+    	)
 
     
     st.markdown("---")
