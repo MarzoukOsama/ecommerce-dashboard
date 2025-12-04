@@ -1,5 +1,6 @@
 &nbsp;📊 E-commerce Analytics Dashboard
 
+🚀 **[DÉMO EN LIGNE](https://ecommerce-dashboard-9uzdrkmqhxypvbhtxpljtz.streamlit.app/)** 🚀
 
 
 Dashboard interactif de visualisation et analyse de données e-commerce construit avec Streamlit et Plotly.
