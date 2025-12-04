@@ -100,7 +100,7 @@ if transactions is not None:
     # Calcul des KPIs
     total_revenue = filtered_df['total_amount'].sum()
     total_orders = len(filtered_df)
-    avg_basket = filtered_df['total_amount'].mean()
+    avg_basket = filtered_df['total_amount'].mean() if len(filtered_df) > 0 else 0
     unique_customers = filtered_df['customer_id'].nunique()
     
     # Affichage des KPIs en colonnes
@@ -110,173 +110,175 @@ if transactions is not None:
         st.metric(
             label="💰 Chiffre d'Affaires",
             value=f"{total_revenue:,.0f} €",
-            delta=f"+{(total_revenue/5000000)*100:.1f}% vs objectif"
+            delta=f"+{(total_revenue/5000000)*100:.1f}% vs objectif" if total_revenue > 0 else "Aucune donnée"
         )
     
     with col2:
         st.metric(
             label="📦 Nombre de Commandes",
             value=f"{total_orders:,}",
-            delta=f"{total_orders} transactions"
+            delta=f"{total_orders} transactions" if total_orders > 0 else "Aucune donnée"
         )
     
     with col3:
         st.metric(
             label="🛒 Panier Moyen",
-            value=f"{avg_basket:,.2f} €",
-            delta="Par commande"
+            value=f"{avg_basket:,.2f} €" if avg_basket > 0 else "0 €",
+            delta="Par commande" if avg_basket > 0 else "Aucune donnée"
         )
     
-     with col4:
+    with col4:
         avg_orders_per_customer = (total_orders / unique_customers) if unique_customers > 0 else 0
         st.metric(
             label="👥 Clients Uniques",
             value=f"{unique_customers}",
             delta=f"{avg_orders_per_customer:.1f} cmd/client" if unique_customers > 0 else "Aucune donnée"
         )
-
-
     
     st.markdown("---")
     
-    # === SECTION 2: GRAPHIQUES TEMPORELS ===
-    st.header("📅 Évolution Temporelle")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # CA mensuel
-        monthly_data = filtered_df.groupby(filtered_df['order_date'].dt.to_period('M')).agg({
-            'total_amount': 'sum',
-            'transaction_id': 'count'
-        }).reset_index()
-        monthly_data['order_date'] = monthly_data['order_date'].astype(str)
+    # Vérifier s'il y a des données à afficher
+    if len(filtered_df) == 0:
+        st.warning("⚠️ Aucune donnée disponible pour les filtres sélectionnés. Veuillez modifier vos critères.")
+    else:
+        # === SECTION 2: GRAPHIQUES TEMPORELS ===
+        st.header("📅 Évolution Temporelle")
         
-        fig_monthly = px.line(
-            monthly_data,
-            x='order_date',
-            y='total_amount',
-            title="📊 Chiffre d'Affaires Mensuel",
-            labels={'order_date': 'Mois', 'total_amount': 'CA (€)'},
-            markers=True
-        )
-        fig_monthly.update_traces(line_color='#1f77b4', line_width=3)
-        st.plotly_chart(fig_monthly, use_container_width=True)
-    
-    with col2:
-        # Commandes par jour de semaine
-        filtered_df['day_name'] = pd.to_datetime(filtered_df['order_date']).dt.day_name()
-        day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        day_sales = filtered_df.groupby('day_name')['total_amount'].sum().reindex(day_order)
+        col1, col2 = st.columns(2)
         
-        fig_weekday = px.bar(
-            x=day_sales.index,
-            y=day_sales.values,
-            title="📆 Ventes par Jour de la Semaine",
-            labels={'x': 'Jour', 'y': 'CA (€)'},
-            color=day_sales.values,
-            color_continuous_scale='Blues'
-        )
-        st.plotly_chart(fig_weekday, use_container_width=True)
-    
-    st.markdown("---")
-    
-    # === SECTION 3: ANALYSE PRODUITS ===
-    st.header("🏆 Performance Produits")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Top 10 produits
-        top_products = filtered_df.groupby('product_name')['total_amount'].sum().sort_values(ascending=False).head(10)
+        with col1:
+            # CA mensuel
+            monthly_data = filtered_df.groupby(filtered_df['order_date'].dt.to_period('M')).agg({
+                'total_amount': 'sum',
+                'transaction_id': 'count'
+            }).reset_index()
+            monthly_data['order_date'] = monthly_data['order_date'].astype(str)
+            
+            fig_monthly = px.line(
+                monthly_data,
+                x='order_date',
+                y='total_amount',
+                title="📊 Chiffre d'Affaires Mensuel",
+                labels={'order_date': 'Mois', 'total_amount': 'CA (€)'},
+                markers=True
+            )
+            fig_monthly.update_traces(line_color='#1f77b4', line_width=3)
+            st.plotly_chart(fig_monthly, use_container_width=True)
         
-        fig_products = px.bar(
-            x=top_products.values,
-            y=top_products.index,
-            orientation='h',
-            title="🥇 Top 10 Produits par CA",
-            labels={'x': 'CA (€)', 'y': 'Produit'},
-            color=top_products.values,
-            color_continuous_scale='Viridis'
-        )
-        fig_products.update_layout(showlegend=False, yaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(fig_products, use_container_width=True)
-    
-    with col2:
-        # Répartition par catégorie
-        category_sales = filtered_df.groupby('category')['total_amount'].sum()
+        with col2:
+            # Commandes par jour de semaine
+            filtered_df['day_name'] = pd.to_datetime(filtered_df['order_date']).dt.day_name()
+            day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+            day_sales = filtered_df.groupby('day_name')['total_amount'].sum().reindex(day_order)
+            
+            fig_weekday = px.bar(
+                x=day_sales.index,
+                y=day_sales.values,
+                title="📆 Ventes par Jour de la Semaine",
+                labels={'x': 'Jour', 'y': 'CA (€)'},
+                color=day_sales.values,
+                color_continuous_scale='Blues'
+            )
+            st.plotly_chart(fig_weekday, use_container_width=True)
         
-        fig_category = px.pie(
-            values=category_sales.values,
-            names=category_sales.index,
-            title="📦 Répartition CA par Catégorie",
-            hole=0.4,
-            color_discrete_sequence=px.colors.qualitative.Set3
-        )
-        st.plotly_chart(fig_category, use_container_width=True)
-    
-    st.markdown("---")
-    
-    # === SECTION 4: ANALYSE GÉOGRAPHIQUE ===
-    st.header("🌍 Analyse Géographique")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Ventes par pays
-        country_sales = filtered_df.groupby('country').agg({
-            'total_amount': 'sum',
-            'customer_id': 'nunique'
-        }).sort_values('total_amount', ascending=False)
+        st.markdown("---")
         
-        fig_countries = px.bar(
-            country_sales,
-            y=country_sales.index,
-            x='total_amount',
-            orientation='h',
-            title="🗺️ CA par Pays",
-            labels={'total_amount': 'CA (€)', 'index': 'Pays'},
-            color='total_amount',
-            color_continuous_scale='RdYlGn'
-        )
-        st.plotly_chart(fig_countries, use_container_width=True)
-    
-    with col2:
-        # Segmentation clients
-        segment_sales = filtered_df.groupby('customer_segment').agg({
-            'total_amount': 'sum',
-            'customer_id': 'nunique'
-        })
+        # === SECTION 3: ANALYSE PRODUITS ===
+        st.header("🏆 Performance Produits")
         
-        fig_segments = px.bar(
-            segment_sales,
-            x=segment_sales.index,
-            y='total_amount',
-            title="💎 CA par Segment Client",
-            labels={'total_amount': 'CA (€)', 'index': 'Segment'},
-            color=segment_sales.index,
-            color_discrete_map={'VIP': '#FFD700', 'Premium': '#C0C0C0', 'Standard': '#CD7F32'}
-        )
-        st.plotly_chart(fig_segments, use_container_width=True)
-    
-    st.markdown("---")
-    
-    # === SECTION 5: TABLEAU DE DONNÉES ===
-    st.header("📋 Données Détaillées")
-    
-    # Options d'affichage
-    show_data = st.checkbox("Afficher les données brutes")
-    
-    if show_data:
-        st.dataframe(
-            filtered_df[['transaction_id', 'order_date', 'product_name', 'category', 
-                        'quantity', 'unit_price', 'total_amount', 'country', 'customer_segment']].head(100),
-            use_container_width=True
-        )
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Top 10 produits
+            top_products = filtered_df.groupby('product_name')['total_amount'].sum().sort_values(ascending=False).head(10)
+            
+            fig_products = px.bar(
+                x=top_products.values,
+                y=top_products.index,
+                orientation='h',
+                title="🥇 Top 10 Produits par CA",
+                labels={'x': 'CA (€)', 'y': 'Produit'},
+                color=top_products.values,
+                color_continuous_scale='Viridis'
+            )
+            fig_products.update_layout(showlegend=False, yaxis={'categoryorder':'total ascending'})
+            st.plotly_chart(fig_products, use_container_width=True)
+        
+        with col2:
+            # Répartition par catégorie
+            category_sales = filtered_df.groupby('category')['total_amount'].sum()
+            
+            fig_category = px.pie(
+                values=category_sales.values,
+                names=category_sales.index,
+                title="📦 Répartition CA par Catégorie",
+                hole=0.4,
+                color_discrete_sequence=px.colors.qualitative.Set3
+            )
+            st.plotly_chart(fig_category, use_container_width=True)
+        
+        st.markdown("---")
+        
+        # === SECTION 4: ANALYSE GÉOGRAPHIQUE ===
+        st.header("🌍 Analyse Géographique")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Ventes par pays
+            country_sales = filtered_df.groupby('country').agg({
+                'total_amount': 'sum',
+                'customer_id': 'nunique'
+            }).sort_values('total_amount', ascending=False)
+            
+            fig_countries = px.bar(
+                country_sales,
+                y=country_sales.index,
+                x='total_amount',
+                orientation='h',
+                title="🗺️ CA par Pays",
+                labels={'total_amount': 'CA (€)', 'index': 'Pays'},
+                color='total_amount',
+                color_continuous_scale='RdYlGn'
+            )
+            st.plotly_chart(fig_countries, use_container_width=True)
+        
+        with col2:
+            # Segmentation clients
+            segment_sales = filtered_df.groupby('customer_segment').agg({
+                'total_amount': 'sum',
+                'customer_id': 'nunique'
+            })
+            
+            fig_segments = px.bar(
+                segment_sales,
+                x=segment_sales.index,
+                y='total_amount',
+                title="💎 CA par Segment Client",
+                labels={'total_amount': 'CA (€)', 'index': 'Segment'},
+                color=segment_sales.index,
+                color_discrete_map={'VIP': '#FFD700', 'Premium': '#C0C0C0', 'Standard': '#CD7F32'}
+            )
+            st.plotly_chart(fig_segments, use_container_width=True)
+        
+        st.markdown("---")
+        
+        # === SECTION 5: TABLEAU DE DONNÉES ===
+        st.header("📋 Données Détaillées")
+        
+        # Options d'affichage
+        show_data = st.checkbox("Afficher les données brutes")
+        
+        if show_data:
+            st.dataframe(
+                filtered_df[['transaction_id', 'order_date', 'product_name', 'category', 
+                            'quantity', 'unit_price', 'total_amount', 'country', 'customer_segment']].head(100),
+                use_container_width=True
+            )
     
     # Footer
     st.markdown("---")
     st.markdown("**📊 E-commerce Analytics Dashboard** | Développé par Oussama Marzouk | Données mises à jour automatiquement")
 
 else:
-    st.error("❌ Impossible de charger les données. Vérifiez que les fichiers CSV sont dans le dossier 'data/'")
+    st.error("❌ Impossible de charger les données. Vérifiez que les fichiers CSV sont
